@@ -95,7 +95,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen overflow-hidden bg-gray-900">
       {/* Sidebar */}
       <div className="flex">
         <motion.div
