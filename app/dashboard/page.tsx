@@ -137,10 +137,7 @@ export default function Dashboard() {
               <BarChart3 className="h-5 w-5" />
               <span>Products</span>
             </a>
-            {/* <a href="#" className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors">
-              <TrendingUp className="h-5 w-5" />
-              <span>Sales</span>
-            </a> */}
+            
           </nav>
         </motion.div>
 
@@ -150,7 +147,7 @@ export default function Dashboard() {
             <button onClick={() => setIsSidebarOpen(true)} className={`lg:hidden ${isSidebarOpen ? 'hidden' : 'block'}`}>
               <Menu className="h-6 w-6 text-white" />
             </button>
-            <h1 className="text-3xl font-bold text-white">Product Overview</h1>
+            <h1 className="sm:text-3xl text-xl font-bold text-white">Product Overview</h1>
             <button
               onClick={() => setIsCreateModalOpen(true)}
               className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors"
@@ -158,7 +155,7 @@ export default function Dashboard() {
               <Plus className="h-5 w-5 inline-block mr-2" />
               Add Product
             </button>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-2 m-3 rounded transition-colors">
+            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-2  rounded transition-colors">
               <SignedIn>
                 <SignOutButton/>
               </SignedIn>
