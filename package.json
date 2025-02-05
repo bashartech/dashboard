@@ -9,18 +9,47 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.8"
+    "@hookform/resolvers": "^3.10.0",
+    "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@sanity/client": "^6.24.3",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.74.0",
+    "@stripe/react-stripe-js": "^3.1.1",
+    "@stripe/stripe-js": "^5.6.0",
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "canvas-confetti": "^1.9.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "cookie": "^1.0.2",
+    "dotenv": "^16.4.7",
+    "framer-motion": "^12.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.395.0",
+    "next": "14.2.4",
+    "next-sanity": "^9.8.51",
+    "nodemailer": "^6.9.16",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.2",
+    "sanity": "^3.74.0",
+    "shipengine": "^1.0.7",
+    "stripe": "^17.6.0",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.8",
+    "framer-motion": "^10.16.2",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.8"
+    "typescript": "^5"
   }
 }
