@@ -41,9 +41,15 @@ export default function Dashboard() {
         orderItems[]{productName, price, quantity}
       }`
       const response = await client.fetch(query)
+
+      // const allProducts = response
+      //   .filter((order: any) => order.orderItems)
+      //   .flatMap((order: any) => order.orderItems.map((item: any) => ({ ...item, _id: order._id })) || [])
       const allProducts = response
-        .filter((order: any) => order.orderItems)
-        .flatMap((order: any) => order.orderItems.map((item: any) => ({ ...item, _id: order._id })) || [])
+      .filter((order: { orderItems?: Product[] }) => order.orderItems)
+      .flatMap((order: { _id: string; orderItems?: Product[] }) => 
+        order.orderItems?.map((item: Product) => ({ ...item, _id: order._id })) || []
+      )
 
       setProducts(allProducts)
 
