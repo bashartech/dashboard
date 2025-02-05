@@ -131,7 +131,7 @@ export default function Dashboard() {
 
         {/* Main Content */}
         <div className={`flex-1 ${isSidebarOpen ? 'ml-64' : 'ml-0'} p-8 transition-all duration-300`}>
-          <div className="flex justify-between gap-8 sm:gap-0 items-center mb-8">
+          <div className="flex justify-between gap-4 sm:gap-0 items-center mb-8">
             <button onClick={() => setIsSidebarOpen(true)} className={`lg:hidden ${isSidebarOpen ? 'hidden' : 'block'}`}>
               <Menu className="h-6 w-6 text-white" />
             </button>
