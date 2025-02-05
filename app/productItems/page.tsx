@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { client } from "@/sanity/lib/client"
-import { BarChart3, Package, TrendingUp, Menu, X, Users, Trash, Plus, Loader2 } from 'lucide-react'
+import { BarChart3, Package, Menu, X, Users, Trash, Plus, Loader2 } from 'lucide-react'
 import { Card } from "@/components/ui/card"
 import Link from 'next/link'
 import Image from 'next/image'
