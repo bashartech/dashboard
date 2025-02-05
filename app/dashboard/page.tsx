@@ -7,6 +7,9 @@ import { client } from "@/sanity/lib/client"
 import { BarChart3, Package,  Menu, X, Users, Trash, Plus, Loader2 } from 'lucide-react'
 import { Card } from "@/components/ui/card"
 import Link from 'next/link'
+import { useUser } from "@clerk/nextjs"
+import { useRouter } from "next/navigation"
+import { SignedIn, SignOutButton } from "@clerk/clerk-react"
 
 interface Product {
   _id: string
@@ -42,9 +45,6 @@ export default function Dashboard() {
       }`
       const response = await client.fetch(query)
 
-      // const allProducts = response
-      //   .filter((order: any) => order.orderItems)
-      //   .flatMap((order: any) => order.orderItems.map((item: any) => ({ ...item, _id: order._id })) || [])
       const allProducts = response
       .filter((order: { orderItems?: Product[] }) => order.orderItems)
       .flatMap((order: { _id: string; orderItems?: Product[] }) => 
@@ -75,6 +75,21 @@ export default function Dashboard() {
       setIsLoading(false)
     }
   }
+
+  const {user, isSignedIn} = useUser()
+  const router = useRouter()
+  const [isUserLoaded, setIsUserLoaded] = useState(false)
+
+  useEffect(()=>{
+    if(isSignedIn && user){
+      setIsUserLoaded(true)
+      if(user.primaryEmailAddress?.emailAddress !== "bashartc13@gmail.com"){
+        router.replace("/")
+      }
+    }
+  },[isSignedIn, user, router])
+
+  if(!isUserLoaded) return <p>Loading...</p>
 
   const handleCreateProduct = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -142,6 +157,11 @@ export default function Dashboard() {
             >
               <Plus className="h-5 w-5 inline-block mr-2" />
               Add Product
+            </button>
+            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-2 m-3 rounded transition-colors">
+              <SignedIn>
+                <SignOutButton/>
+              </SignedIn>
             </button>
           </div>
 
